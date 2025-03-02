@@ -1,26 +1,16 @@
-name: Simple CI/CD Workflow
+name: Simple YAML Demo
 
-on:
+on: 
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
-  build:
+  demo-job:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Run Tests
-        run: npm test
+      - name: Run a simple command
+        run: echo "Hello, YAML in GitHub!"
